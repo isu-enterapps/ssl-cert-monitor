@@ -1,0 +1,8 @@
+$([[ "${SMTP_SSL_NOVERIFY+1}" ]] && { echo "
+  set tls-verify=ignore
+"; })
+set v15-compat
+set smtp-use-starttls
+set smtp-auth=login
+set mta=${EMAIL_PROTOCOL}://${SMTP_USER}:${SMTP_PASS}@${SMTP_URI}
+set from=${SMTP_FROM}

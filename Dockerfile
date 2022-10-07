@@ -1,19 +1,16 @@
-FROM debian:jessie
+FROM alpine:3.15
 
-MAINTAINER dario dario@dariozanzico.com
+LABEL AUTHOR="Steven Coburn"
 
 RUN \
-  apt-get update && \
-  apt-get install -y openssl heirloom-mailx && \
-  rm -fr /var/lib/apt/lists/*
+  apk update && \
+  apk --no-cache add coreutils curl openssl s-nail
 
-COPY files/ssl-cert-check-v3.29 /ssl-cert-check
-COPY files/run.sh /run.sh
-COPY files/mailrc.template /tmp/
+COPY build/ssl-cert-check /ssl-cert-check
+COPY build/run.sh /run.sh
+COPY build/mailrc.template /tmp/
 
 RUN chmod +x /ssl-cert-check
 RUN chmod +x /run.sh
 
 CMD /run.sh
-
-
