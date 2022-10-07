@@ -1,4 +1,4 @@
 .env
 sites*
-*.xlsx
-docker-compose.yml
+**/*.xlsx
+!*.example

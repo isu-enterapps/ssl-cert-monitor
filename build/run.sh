@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ENDPOINTS_FILE=/sites
+ENDPOINTS_FILE=/monitor-list
 
 if [ "${ENDPOINTS+1}" ]; then
   echo "$ENDPOINTS" >> "$ENDPOINTS_FILE"

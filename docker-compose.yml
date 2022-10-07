@@ -1,0 +1,25 @@
+version: '3'
+services:
+  ssl-cert-monitor:
+    image: ssl-cert-monitor:latest
+    container_name: ssl-cert-monitor
+    restart: unless-stopped
+    network_mode: bridge
+    volumes:
+      - ./sites:/monitor-list
+      - /etc/timezone:/etc/timezone:ro
+    environment:
+      # CHECK_INTERVAL: 6000
+      # DAILY_TIME: 23:13
+      # WEEKLY_TIME: "Thursday 22:19:00"
+      SEND_EMAIL: "true"
+      SMTP_SSL_NOVERIFY: "true"
+      SMTP_FROM: ${EMAIL_FROM}
+      SMTP_USER: ${EMAIL_FROM_ENCODED}
+      SMTP_PASS: ${EMAIL_PASS}
+      EMAIL_PROTOCOL: ${EMAIL_PROTOCOL}
+      SMTP_URI: ${SMTP_SERVER}
+      SMTP_TO: ${EMAIL_TO}
+      CHAT_API: ${CHAT_API}
+      WARNING_DAYS_MAX: 31
+      WARNING_DAYS_MIN: 24
