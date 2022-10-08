@@ -3,7 +3,6 @@ services:
   ssl-cert-monitor:
     image: ssl-cert-monitor:latest
     container_name: ssl-cert-monitor
-    restart: unless-stopped
     network_mode: bridge
     volumes:
       - ./sites:/monitor-list
