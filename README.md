@@ -32,4 +32,4 @@ The checks will run only once unless `CHECK_INTERVAL` or `DAILY_TIME` variables 
 |`CHECK_INTERVAL`|no||Duration (in seconds) of sleep between checks.|
 |`DAILY_TIME`|no||If set run the script daily at the specified time (UTC). Examples: `14:00`, `23:59:59`|
 |`WEEKLY_TIME`|no||If set run the script weekly at the specified time (UTC). Example: `"Thursday 23:00:00"`|
-|`CHAT_API`|no||HTTPS address of Discord or Slack (untested) chatroom APIs. Will send full report to this chatroom. Example: `"Thursday 23:00:00"`|
+|`CHAT_API`|no||HTTPS address of Discord or Slack (untested, maybe in the future) chatroom APIs. Will send full report to this chatroom.|
